@@ -1,5 +1,5 @@
 package m1TSP2026;
-public class NodeInPlane extends Node{
+public class NodeInPlane extends Node implements Comparable<NodeInPlane>{
     private PlanePosiion position;
     NodeInPlane(int id , PlanePosition position){
         super(id);
@@ -19,5 +19,16 @@ public class NodeInPlane extends Node{
     }
     public PlanePosition getPosition(){
         return this.position;
+    }
+    public double distanceWith(NodeInPlane n){
+        return this.position.distanceWith(n.getPosition());
+    }
+    public int distanceIntSqWith(NodeInPlane n){
+        return this.position.distanceIntSqWith(n.getPosition());
+    }
+    @Override
+    public boolean equals(Object other){
+        NodeInPlane n = (NodeInPlane) other;
+        return this.getPosition().equal(n.getPosition());
     }
 }

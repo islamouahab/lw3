@@ -33,10 +33,12 @@ public class PlanePosition implements Comparable<PlanePosition>{
     public int distanceIntSqWith(PlanePosition p){
         return (this.x - p.x) * (this.x - p.x) + (this.y - p.y) * (this.y - p.y);
     }
+    @Override 
     public boolean equal(Object other){
         PlanePosition p = (PlanePosition) other;
         return this.x == p.x && this.y == p.y;
     }
+    @Override 
     public String hashcode(){
         return this.x + "," + this.y;
     }
