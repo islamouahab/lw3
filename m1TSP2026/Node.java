@@ -14,6 +14,12 @@ public class Node implements Comparable<Node> {
         this.graph = graph;
         this.name = name;
     }
+    public Node(int id) {
+        this.id = id;
+    }
+    public Node(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return this.id;
